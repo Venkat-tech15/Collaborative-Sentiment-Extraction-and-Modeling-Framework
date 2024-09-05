@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+	<title>Home</title>
+    <style>
+		.carousel-item {
+		height: 34rem;
+		background: black;
+		position: relative;
+		background-position:center;
+		background-size: cover;
+		}
+		.carousel-caption{
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		padding-bottom: 50px;
+		}
+		.overlay-image{
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		padding-bottom: 0px;
+		background-position: center;
+		background-size: cover;
+		opacity: 0.4;
+		}
+        #i1{
+            position: relative;
+            top:30%;
+            text-align: center;
+            color: rgb(255, 255, 255);
+            text-shadow: black;
+            height: 50px;
+
+        }
+	</style>
+</head>
+<body>
+	<header style="height: 80px;">
+		<div style="background-color: rgb(49, 110, 189);">
+			<marquee behavior="scroll" direction="right" scrollamount="20"><h1 id="i1">Collaborative Sentiment Extraction And Modelling Framework</h1></marquee>
+		</div>
+		<button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+	</header>
+	<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+		<div class="carousel-indicators">
+			<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+			<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+			<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+		</div>
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+				<div class="overlay-image">
+					<img src="https://images.firstpost.com/wp-content/uploads/2019/02/twitter-logo-1280-pixabay.jpg" style="width: 100%" >
+				</div>
+				<div class="carousel-caption">
+					<b>
+						<h1 style="font-size: 100px">How does this work?</h1>
+					</b>
+					<br>
+					<a href="{{ url_for('sample') }}" class="btn btn-primary btn-block btn-lg" style="background-color: crimson; font-size: 30px">Click Here to know more about this project</a>
+				</div>
+			</div>
+			<div class="carousel-item">
+				<div class="overlay-image">
+					<img src="https://src.n-ix.com/uploads/2022/11/16/b7b13980-1a5b-4a7f-aac1-53f217fede4c.png" style="width: 100%" >
+				</div>
+				<div class="carousel-caption">
+					<b>
+						<h1 style="font-size: 100px">Workflow</h1>
+					</b>
+					<br>
+                    <div class="btn btn-primary btn-block btn-lg" style="background-color: rgb(11, 189, 233); color: black; font-weight: bold; font-size: 30px; text-align: left; font-family: 'Franklin Gothic Book';">
+						<ul type="disc">
+							<h1>Upload your dataset</h1>
+							<h1>Gather insights on user sentiment</h1>
+							<h1>Generate aesthtic chats to convey your insights easily
+								
+							</h1>
+						</ul>
+					</div>
+                </div>		
+			</div>
+			<div class="carousel-item">
+				<div class="overlay-image">
+					<img src="https://www.abacusgroupllc.com/hubfs/Twitter%20with%20Lines%20Background.jpeg" style="width: 100%" >
+				</div>
+				<div class="carousel-caption" style="align-self: start; padding-top: 20px">
+					<b>
+						<h1 style="font-size: 100px">Let's Get Started!!</h1>
+					</b>
+					<br>
+					<a href="{{ url_for('index2') }}" class="btn btn-primary btn-block btn-lg" style="background-color: crimson; font-size: 20px">Click Here to Analyze Some Tweets</a>
+				</div>
+			</div>
+		</div>
+		<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Previous</span>
+		</button>
+		<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Next</span>
+		</button>
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></script>
+</body>
+</html>

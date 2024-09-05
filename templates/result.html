@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sentiment Analysis Results</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #2c3e50, #4ca1af);
+            color: #eaeaea;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        #visualizationButton {
+            background: linear-gradient(to right, #6a3093, #a044ff);
+            border: none;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        #visualizationButton:hover {
+            background: linear-gradient(to right, #a044ff, #6a3093);
+        }
+
+        table {
+            box-shadow: none;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th, td {
+            border-color: #888;
+        }
+
+        th {
+            background-color: #333;
+        }
+
+        
+/* Enhanced Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+}
+
+th, td {
+    padding: 10px 15px;
+    border-bottom: 1px solid #e0e0e0;
+    text-align: left;
+}
+
+th {
+    background-color: #4a4a4a;
+    color: #fff;
+    font-weight: bold;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+tr:last-child td {
+    border-bottom: none;  /* Remove border for the last row */
+}
+
+
+/* Further Enhanced Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    margin: 30px 0;
+    border: 1px solid #e0e0e0;
+}
+
+th, td {
+    padding: 12px 18px;
+    border-bottom: 1px solid #e0e0e0;
+    text-align: left;
+}
+
+th {
+    background-color: #2c3e50;
+    color: #eaeaea;
+    font-weight: bold;
+    border-bottom: 2px solid #4ca1af;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:last-child td {
+    border-bottom: none;  /* Remove border for the last row */
+}
+
+tr:hover {
+    background-color: #e7e7e7;  /* More subtle hover effect */
+}
+
+/* Enhanced H1 Styles */
+h1 {
+    font-size: 2.5em;
+    margin: 30px 0;
+    color: #eaeaea;
+    font-weight: 600;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Improved Total Tweets Display */
+h2, h3, p {
+    font-size: 1.5em;
+    font-weight: 500;
+    margin: 20px 0;
+    color: #f7f7f7;
+}
+
+tr:hover {
+    background-color: rgba(85, 85, 85, 0.2);  /* More subtle hover effect */
+}
+
+
+/* Further Enhanced Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    margin: 30px 0;
+    border: 1px solid #e0e0e0;
+}
+
+th, td {
+    padding: 12px 18px;
+    border-bottom: 1px solid #e0e0e0;
+    text-align: left;
+}
+
+th {
+    background-color: #2c3e50;
+    color: #eaeaea;
+    font-weight: bold;
+    border-bottom: 2px solid #4ca1af;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:last-child td {
+    border-bottom: none;  /* Remove border for the last row */
+}
+
+tr:hover {
+    background-color: #e7e7e7;  /* More subtle hover effect */
+}
+
+/* Enhanced H1 Styles */
+h1 {
+    font-size: 2.5em;
+    margin: 30px 0;
+    color: #eaeaea;
+    font-weight: 600;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Improved Total Tweets Display */
+h2, h3, p {
+    font-size: 1.5em;
+    font-weight: 500;
+    margin: 20px 0;
+    color: #f7f7f7;
+}
+
+tr:hover {
+            background-color: #555;
+        }
+    
+        body {
+            font-family: 'Helvetica', sans-serif;
+            margin: 20px;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+        #visualizationButton{
+            display: block;
+            margin: 20px auto 0;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        h1 {
+            color: #007bff;
+            text-align: center;
+        }
+        h2 {
+            color: #000000;
+            margin-top: 20px;
+        }
+        h3 {
+            margin-bottom: 8px;
+        }
+        /* Colors for Paragraphs */
+        .total-tweets {
+            color: #007bff;}
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 12px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+/* Enhanced Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+}
+
+th, td {
+    padding: 10px 15px;
+    border-bottom: 1px solid #e0e0e0;
+    text-align: left;
+}
+
+th {
+    background-color: #4a4a4a;
+    color: #fff;
+    font-weight: bold;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+tr:last-child td {
+    border-bottom: none;  /* Remove border for the last row */
+}
+
+
+/* Further Enhanced Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    margin: 30px 0;
+    border: 1px solid #e0e0e0;
+}
+
+th, td {
+    padding: 12px 18px;
+    border-bottom: 1px solid #e0e0e0;
+    text-align: left;
+}
+
+th {
+    background-color: #2c3e50;
+    color: #eaeaea;
+    font-weight: bold;
+    border-bottom: 2px solid #4ca1af;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:last-child td {
+    border-bottom: none;  /* Remove border for the last row */
+}
+
+tr:hover {
+    background-color: #e7e7e7;  /* More subtle hover effect */
+}
+
+/* Enhanced H1 Styles */
+h1 {
+    font-size: 2.5em;
+    margin: 30px 0;
+    color: #eaeaea;
+    font-weight: 600;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Improved Total Tweets Display */
+h2, h3, p {
+    font-size: 1.5em;
+    font-weight: 500;
+    margin: 20px 0;
+    color: #f7f7f7;
+}
+
+tr:hover {
+    background-color: rgba(85, 85, 85, 0.2);  /* More subtle hover effect */
+}
+
+
+/* Further Enhanced Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    margin: 30px 0;
+    border: 1px solid #e0e0e0;
+}
+
+th, td {
+    padding: 12px 18px;
+    border-bottom: 1px solid #e0e0e0;
+    text-align: left;
+}
+
+th {
+    background-color: #2c3e50;
+    color: #eaeaea;
+    font-weight: bold;
+    border-bottom: 2px solid #4ca1af;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:last-child td {
+    border-bottom: none;  /* Remove border for the last row */
+}
+
+tr:hover {
+    background-color: #e7e7e7;  /* More subtle hover effect */
+}
+
+/* Enhanced H1 Styles */
+h1 {
+    font-size: 2.5em;
+    margin: 30px 0;
+    color: #eaeaea;
+    font-weight: 600;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Improved Total Tweets Display */
+h2, h3, p {
+    font-size: 1.5em;
+    font-weight: 500;
+    margin: 20px 0;
+    color: #f7f7f7;
+}
+
+tr:hover {
+            background-color: #ddd;
+        }
+        .category {
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        /* Custom Colors for Rows */
+        .strongly-positive-bg {
+            background-color: #c9e6c9;
+        }
+        .weakly-positive-bg {
+            background-color: #e1f0d6;
+        }
+        .strongly-negative-bg {
+            background-color: #f7c0c0;
+        }
+        .weakly-negative-bg {
+            background-color: #fcd4d4;
+        }
+        .neutral-bg {
+            background-color: #f2f2f2;}
+        /* ... existing styles ... */
+
+        /* Additional styles for the pie chart and bar graph containers */
+        .chart-container {
+            display: none;
+            max-width: 1200px;
+            margin: 20px auto;
+            text-align: center;
+        }
+        .chart-item {
+            width: 450px;
+            height: 400px;
+            display: inline-block;
+            margin: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            background-color: #fff;
+            padding: 20px;
+            padding-bottom: 100px;
+        }
+        .chart-item h1 {
+            margin-top: 0;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+<h1><b><i>Sentiment Analysis Results</i></b></h1>
+<h2>Total Tweets {{ total_tweets}}</h2>
+    <h2>Details</h2>
+    <table>
+        <tr>
+            <th>Category</th>
+            <th>No.Of Tweets</th>
+            <th>Percentage</th>
+        </tr>
+        <tr class="strongly-positive-bg">
+            <td>Strongly Positive</td>
+            <td>{{ a }}</td>
+            <td>{{ strongly_positive_percentage }}%</td>
+        </tr>
+        <tr class="weakly-positive-bg">
+            <td>Weakly Positive</td>
+            <td>{{b}}</td>
+            <td>{{ weakly_positive_percentage }}%</td>
+        </tr>
+        <tr class="strongly-negative-bg">
+            <td>Strongly Negative</td>
+            <td>{{c }}</td>
+            <td>{{ strongly_negative_percentage }}%</td>
+       
+        <tr class="weakly-negative-bg">
+            <td>Weakly Negative</td>
+            <td>{{ d}}</td>
+            <td>{{ weakly_negative_percentage }}%</td>
+        </tr>
+        <tr class="strongly-negative-bg">
+            <td>Strongly Negative</td>
+            <td>{{c }}</td>
+            <td>{{ strongly_negative_percentage }}%</td>
+        </tr>
+        </table>
+        <center>
+        <button id="visualizationButton">Generate Visualization</button>
+    </center>
+
+    <!-- Pie chart and Bar graph container -->
+    <div class="chart-container">
+        <div class="chart-item">
+            <h1>Pie Chart</h1>
+            <canvas id="pieChart"></canvas>
+        </div>
+        <div class="chart-item">
+            <h1>Trend Analysis</h1>
+            <canvas id="lineGraph"></canvas>
+        </div>
+    </div>
+
+    <!-- ... existing content ... -->
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    
+    <script>
+        var stronglyPositivePercentage = {{ strongly_positive_percentage }};
+        var weaklyPositivePercentage = {{ weakly_positive_percentage }};
+        var stronglyNegativePercentage = {{ strongly_negative_percentage }};
+        var weaklyNegativePercentage = {{ weakly_negative_percentage }};
+        var neutralPercentage = {{ neutral_percentage }};
+        var a={{a}};
+        var b={{b}};
+        var c={{c}};
+        var d={{d}};
+        var e={{e}};
+
+        // Set up data for the pie chart
+        var pieData = {  labels: ['Strongly Positive', 'Weakly Positive', 'Strongly Negative', 'Weakly Negative', 'Neutral'],  
+            datasets: [{
+                data: [stronglyPositivePercentage, weaklyPositivePercentage, stronglyNegativePercentage, weaklyNegativePercentage, neutralPercentage],
+                backgroundColor: ['#00ff3c', '#1dce3b', '#fe021b', '#af232f', '#939c11'],
+            }]
+            
+        };
+
+        // Set up data for the line graph
+        var lineData = {
+        labels: [' ', '-0.4', '-0.2 ', '0 ', '0.2','0.4',' '],
+        datasets: [{
+            label: 'sentiment score',
+            data: [ ,c, d, e, b, a, ],
+            fill: false,
+            borderColor: 'rgb(75, 192, 192)',
+            tension: 0.2
+
+        }]
+    };
+            
+        // Set up options for both visualizations
+        var options = {
+            responsive: true,
+            maintainAspectRatio: false,
+        };
+
+        // Create the pie chart
+        var pieCtx = document.getElementById('pieChart').getContext('2d');
+        var pieChart = new Chart(pieCtx, {
+            type: 'pie',
+            data: pieData,
+        
+        });
+
+        // Create the bar graph
+        var lineCtx = document.getElementById('lineGraph').getContext('2d');
+        var lineChart = new Chart(lineCtx, {
+            type: 'line',
+            data: lineData,
+            options: options,
+
+        });
+
+        // Add event listener to show/hide visualizations
+        var visualizationButton = document.getElementById('visualizationButton');
+        visualizationButton.addEventListener('click', function() {
+            var chartContainer = document.querySelector('.chart-container');
+            chartContainer.style.display = 'block';
+        });
+    </script>
+</body>
+</html>

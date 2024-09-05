@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collaborative Sentiment Extraction and Modeling Framework</title>
+    <!-- Google Font: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- AOS Library for Animations -->
+    <link rel="stylesheet" href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap');
+        
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            z-index: -1;
+            background: url('https://www.transparenttextures.com/patterns/45-degree-fabric-light.png');
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        section {
+            transition: all 0.3s ease-in-out;
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        p {
+            margin-bottom: 25px;
+        }
+    
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+            color: #333;
+        }
+
+        h1 {
+            font-weight: 600;
+            color: #005792;
+            margin-top: 50px;
+        }
+
+        h2 {
+            font-weight: 600;
+            color: #004d6b;
+        }
+
+        h3 {
+            font-weight: 500;
+            color: #003d52;
+        }
+
+        p {
+            text-align: justify;
+            margin-bottom: 20px;
+            color: #004d6b;
+            font-weight: 300;
+        }
+
+        section {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 30px 40px;
+        }
+
+        /* Animation configurations */
+        [data-aos] {
+            transition-duration: 1000ms;
+            transition-timing-function: ease-in-out;
+            transition-delay: 0ms;
+        }
+    </style>
+</head>
+
+<body>
+
+    <center><h1>Collaborative Sentiment Extraction and Modeling Framework</h1></center>
+
+    <section >
+        <h2>Introduction</h2>
+        <p>In the current era dominated by social media, Twitter stands as a monumental platform for the articulation of opinions, emotions, and sentiments. The capacity to comprehensively analyse these sentiments on a large scale is pivotal for deciphering public perceptions and tracking sentiment trends.</p>
+        <p>This project introduces a holistic framework meticulously crafted to extract, analyse, and visualise sentiments inherent in a corpus of tweets, leveraging the TextBlob library. The framework enables sentiment classification spanning five distinct categories: positive, semi-positive, negative, weakly negative, and neutral. These outcomes are vividly showcased through informative pie chart visualisations.</p>
+    </section>
+
+    <section >
+        <h2>Framework Overview</h2>
+        <p>The Collaborative Sentiment Extraction and Modeling Framework effectively addresses the pressing need for efficient sentiment analysis. This framework streamlines the entire process, harnessing the prowess of TextBlob...</p>
+    </section>
+
+    <section >
+        <h2>Data Visualization</h2>
+        <p>Data visualization plays an integral role in the "Collaborative Sentiment Extraction and Modeling Framework". Through the use of dynamic JavaScript-driven charts, the framework offers a compelling and interactive way to understand sentiment distributions and trends.</p>
+        
+        <h3>Pie Chart</h3>
+        <p>The pie chart provides a holistic view of the sentiment distribution across the five categories: positive, semi-positive, negative, weakly negative, and neutral. With its intuitive design, users can easily discern the proportion of tweets falling into each sentiment category, offering immediate insights into the overall sentiment landscape of the dataset.</p>
+        
+        <h3>Line Chart</h3>
+        <p>For those interested in tracking sentiment trends over time, the line chart visualization is invaluable. By plotting sentiment scores against time, users can identify patterns, spikes, or anomalies in sentiment. This temporal analysis aids in understanding how public opinion may shift in response to events, news, or other external factors.</p>
+    </section>
+
+    <section >
+        <h2>Core Analysis</h2>
+        <p>At its core, the framework revolves around the sentiment analysis powered by TextBlob. Employing a lexicon-based approach, this library delineates the sentiment polarity of each tweet. The sentiments are artfully categorised into five distinct classes, namely: positive, semi-positive, negative, weakly negative, and neutral. This nuanced classification framework transcends the conventional binary perspective of positive and negative sentiments, affording a richer comprehension of sentiment distribution within the dataset.</p>
+    </section>
+
+    <!-- AOS Library Script -->
+    <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+</body>
+
+</html>
